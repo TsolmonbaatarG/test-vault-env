@@ -7,7 +7,6 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-
 RUN npm run build
 
 # 2. Run stage
@@ -15,9 +14,9 @@ FROM node:20-alpine
 
 WORKDIR /app
 
-COPY --from=builder /app ./
-
 ENV NODE_ENV=production
+
+COPY --from=builder /app ./
 
 EXPOSE 3000
 
