@@ -1,7 +1,10 @@
-import type { NextConfig } from "next";
+// next.config.js
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: "standalone",
 
-const nextConfig: NextConfig = {
-  /* config options here */
+  // webpack config УСТГАЖ, turbopack-ээр солих
+  turbopack: {},
 };
 
-export default nextConfig;
+module.exports = nextConfig;
